@@ -1,20 +1,29 @@
-//ficção cientifica,terror,aventura
+let campoIdade;
+let campoFantasia;
+let campoAventura;
 
-//sombra e ossos,16,fantasia,aventura
-//manual de assasinato para boas garatas,16,investigação,uspence
-//sobrenatural,16,fantasia,suspence,misterio
-//os originais,16,fantasia
-//grey's anatomy,16,drama
-
-//umbrella,18,fantaia,violência
-//os jovens titans,18,fantasia,violência
-//the witcher,18,fantasia,terror,supence
-
-function setup() {
-  createCanvas(400,400);
+function setup(){
+  createCanvas(800, 400);
+  createElement("h2", "Recomendador de series");
+  createSpan("Sua idade:");
+  campoIdade = createInput("5");
+  campoFantasia = createCheckbox("Gosta de fantasia?");
+  campoAventura = createCheckbox("Gosta de aventura?");
 }
 
 function draw() {
-  background(250)
+  background("white");
+  let idade = campoIdade.value();
+  let gostaDeFantasia = campoFantasia.checked();
+  let gostaDeAventura = campoAventura.checked();
+  let recomendacao = geraRecomendacao(idade, gostoDeFantasia, gostaDeAventura);
   
+  fill(color(76, 0, 115));
+  textAling(CENTER, CENTER);
+  textSize(38);
+  text(recomendacoa, width / 2, height / 2);
 }
+
+function geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura)
+{
+  if (idade )
